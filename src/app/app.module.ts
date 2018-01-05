@@ -4,7 +4,10 @@ import { FormsModule } from '@angular/forms';
 import { RoutingModule } from './app.routing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialsModule } from './app.materials';
+import { BlockUIModule } from 'ng-block-ui';
+import { HttpModule } from '@angular/http';
 
+import { UsersBackendService } from './services/users-backend.service';
 
 import { AppComponent } from './components/app.component';
 import { MainPageComponent } from './components/main-page/main-page.component';
@@ -25,8 +28,12 @@ import { DashboardPageComponent } from './components/dashboard-page/dashboard-pa
     RoutingModule,
     BrowserAnimationsModule,
     MaterialsModule,
+    BlockUIModule,
+    HttpModule,
   ],
-  providers: [],
+  providers: [
+    UsersBackendService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
